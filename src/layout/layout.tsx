@@ -2,7 +2,7 @@ import React from "react";
 import {Route, Switch, withRouter} from "react-router";
 import {routers} from "../router/router";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-
+import { hot } from 'react-hot-loader'
 const Content = withRouter(({history,location,match}) => {
     console.log(JSON.stringify(match));
     return(
@@ -28,6 +28,7 @@ class Layout extends React.PureComponent<any,any>{
         }
     }
     render() {
+        console.log(routers,'routersrouters');
         return (
             <div>
                 <p>asdaaaaaaaaaaaaaaaaa</p>
@@ -55,4 +56,6 @@ class Layout extends React.PureComponent<any,any>{
     }
 
 }
+// export default hot(module)(Layout)
+
 export default Layout

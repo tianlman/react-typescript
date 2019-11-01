@@ -5,14 +5,16 @@ import {rootRouters, routers} from "./router/router";
 
 class App extends React.PureComponent<any, any> {
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
-        console.log(routers, '[[[');
+        console.log(rootRouters, '[[[');
         return (
             <div className="App">
+                adasd
                 <Router>
                     <main>
                         <Switch>
                             {
                                 rootRouters.map((route, index) => {
+                                    console.log(route.path,route.component)
                                     return (
                                         <Route
                                             key={index}

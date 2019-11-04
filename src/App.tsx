@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {rootRouters, routers} from "./router/router";
+import {rootRouters} from "./router/router";
 
 class App extends React.PureComponent<any, any> {
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
         console.log(rootRouters, '[[[');
         return (
             <div className="App">
-                adasd
                 <Router>
                     <main>
                         <Switch>

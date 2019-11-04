@@ -1,11 +1,11 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 import {Redirect} from "react-router-dom";
+import Layout from "../Layout/Layout";
 
 //标记： 在定义我们的路由对象，使用react-loadable 对路由组件进行懒加载，这是经常需要做的行为。
 // 详情请参考这一篇文章：https://blog.csdn.net/China_Guanq/article/details/82194928#loadable
 let loadable = (filename: any) => {
-    // console.log(filename, `@/page/${filename}/${filename}`, '[');
     return Loadable({
         loader: () => import(`@/page/${filename}/${filename}`),
         loading: () => null
@@ -13,7 +13,7 @@ let loadable = (filename: any) => {
 };
 let loadable2 = (filename: any) =>
     Loadable({
-        loader: () => import(`@/page/${filename}`),
+        loader: () => import(`@/${filename}/${filename}`),
         loading: () => null
     });
 const rootRouters = [
@@ -21,21 +21,21 @@ const rootRouters = [
         //根路由匹配
         path: '/',
         exact: true,
-        component: () => <Redirect to='layout'/>
+        component: () => <Redirect to='Layout'/>
     },
     {
         // 首页
-        path: 'layout',
-        component: loadable2('layout')
+        path: '/Layout',
+        component: loadable2('Layout')
         // component: Loadable({
-        //     loader: () => import('@/layout/layout'),
+        //     loader: () => import('@/Layout/Layout'),
         //     loading: () => null
         // })
     },
     {
-        // 404 匹配
+        // Page404 匹配
         path: '*',
-        component: loadable('404')
+        component: loadable('Page404')
     }
 ];
 
@@ -43,13 +43,13 @@ const rootRouters = [
 //路由配置对象
 const routers = [
     {
-        path: '/detail',
+        path: '/Detail',
         exact: true,
-        component: loadable('detail')
+        component: loadable('Detail')
     },
     {
-        path: '/home',
-        component: loadable('home')
+        path: '/Home',
+        component: loadable('Home')
     },
 ];
 

@@ -2,12 +2,14 @@ import React from "react";
 import {Route, Switch, withRouter} from "react-router";
 import {routers} from "../router/router";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import { hot } from 'react-hot-loader'
+import {Button} from "antd";
+
 const Content = withRouter(({history,location,match}) => {
     console.log(JSON.stringify(match));
     return(
         <div className='list'>
             <p onClick={() => history.push(`${match.path}/home`)}>0、React hash 模式路由实现的手段</p>
+            <p onClick={() => history.push(`${match.path}/detail`)}>0、React hash 模式路由实现的手段</p>
             {/*<p onClick={() => history.push(`${match.path}/view0`)}>0、React hash 模式路由实现的手段</p>*/}
             {/*<p onClick={() => history.push(`${match.path}/view1`)}>1、React Route 路由的基本配置 以及 实现路由的模糊匹配（动态路由，嵌套路由）</p>*/}
             {/*<p onClick={() => history.push(`${match.path}/view2`)}>2、React 路由参数</p>*/}
@@ -28,13 +30,13 @@ class Layout extends React.PureComponent<any,any>{
         }
     }
     render() {
-        console.log(routers,'routersrouters');
+        console.log(this.props,'routersrouters');
         return (
             <div>
-                <p>asdaaaaaaaaaaaaaaaaa</p>
+                <Button type={"primary"}>antdbutton</Button>
                 <Content/>
-                <TransitionGroup>
-                    <CSSTransition key={this.props.location.key} classNames='fade' timeout={300}>
+                {/*<TransitionGroup>*/}
+                {/*    <CSSTransition key={this.props.location.key} classNames='fade' timeout={300}>*/}
                         <Switch location={this.props.location}>
                             {
                                 routers.map((route,index) => {
@@ -49,8 +51,8 @@ class Layout extends React.PureComponent<any,any>{
                                 })
                             }
                         </Switch>
-                    </CSSTransition>
-                </TransitionGroup>
+                {/*    </CSSTransition>*/}
+                {/*</TransitionGroup>*/}
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import {HashRouter, Route, Switch} from 'react-router-dom';
-import Home from "../page/home/home";
-import Detail from "../page/detail/detail";
+import Home from "../page/Home/Home";
+import Detail from "../page/Detail/Detail";
 
 
 

@@ -4,7 +4,7 @@ class Detail extends React.PureComponent<any,any>{
     constructor(props:any){
         super(props);
         this.state={
-            name:''
+            name:'Detail.tsx'
         }
     }
     render(){

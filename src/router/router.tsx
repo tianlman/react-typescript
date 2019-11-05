@@ -1,6 +1,7 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 import {Redirect} from "react-router-dom";
+import PageLayout from "../PageLayout/PageLayout";
 
 //标记： 在定义我们的路由对象，使用react-loadable 对路由组件进行懒加载，这是经常需要做的行为。
 // 详情请参考这一篇文章：https://blog.csdn.net/China_Guanq/article/details/82194928#loadable
@@ -20,14 +21,14 @@ const rootRouters = [
         //根路由匹配
         path: '/',
         exact: true,
-        component: () => <Redirect to='Layout'/>
+        component: () => <Redirect to='Home'/>
     },
     {
         // 首页
-        path: '/Layout',
-        component: loadable2('Layout')
+        path: '/Home',
+        component: loadable2('PageLayout')
         // component: Loadable({
-        //     loader: () => import('@/Layout/Layout'),
+        //     loader: () => import('@/PageLayout/PageLayout'),
         //     loading: () => null
         // })
     },
@@ -42,12 +43,12 @@ const rootRouters = [
 //路由配置对象
 const routers = [
     {
-        path: '/Detail',
+        path: '/Home/Detail',
         exact: true,
         component: loadable('Detail')
     },
     {
-        path: '/Home',
+        path: '/Home/Home',
         component: loadable('Home')
     },
 ];

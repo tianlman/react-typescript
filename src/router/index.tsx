@@ -1,18 +1,25 @@
 import React from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom';
-import Home from "../page/Home/Home";
-import Detail from "../page/Detail/Detail";
+import {HashRouter, Route, Switch,BrowserRouter} from 'react-router-dom';
+import {rootRouters} from "./router";
 
 
 
 const BasicRoute = () => (
-    <HashRouter>
+    <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/detail" component={Detail}/>
+                {
+                    rootRouters.map((route, index) => {
+                        console.log(route.path, route.component)
+                        return (
+                            <Route
+                                key={index}
+                                path={route.path}
+                                exact={route.exact}
+                                component={route.component}/>
+                        )
+                    })
+                }
         </Switch>
-    </HashRouter>
+    </BrowserRouter>
 );
-
-
 export default BasicRoute;

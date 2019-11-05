@@ -22,7 +22,7 @@ const Content = withRouter(({history,location,match}) => {
         </div>
     )
 });
-class Layout extends React.PureComponent<any,any>{
+class Layout1 extends React.PureComponent<any,any>{
     constructor(props:any){
         super(props);
         this.state={
@@ -35,8 +35,8 @@ class Layout extends React.PureComponent<any,any>{
             <div>
                 <Button type={"primary"}>antdbutton</Button>
                 <Content/>
-                {/*<TransitionGroup>*/}
-                {/*    <CSSTransition key={this.props.location.key} classNames='fade' timeout={300}>*/}
+                <TransitionGroup>
+                    <CSSTransition key={this.props.location.key} classNames='fade' timeout={300}>
                         <Switch location={this.props.location}>
                             {
                                 routers.map((route,index) => {
@@ -51,13 +51,13 @@ class Layout extends React.PureComponent<any,any>{
                                 })
                             }
                         </Switch>
-                {/*    </CSSTransition>*/}
-                {/*</TransitionGroup>*/}
+                    </CSSTransition>
+                </TransitionGroup>
             </div>
         );
     }
 
 }
-// export default hot(module)(Layout)
+// export default hot(module)(PageLayout)
 
-export default Layout
+export default Layout1

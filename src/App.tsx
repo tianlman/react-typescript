@@ -1,31 +1,33 @@
 import React from 'react';
 import './App.less';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-import {rootRouters} from "./router/router";
+import {BrowserRouter, BrowserRouter as Router, HashRouter, Route, Switch} from "react-router-dom";
+import {rootRouters,routers} from "./router/router";
+import BasicRoute from "./router";
 
 class App extends React.PureComponent<any, any> {
     render(): React.ReactElement<any, string | React.JSXElementConstructor<any>> | string | number | {} | React.ReactNodeArray | React.ReactPortal | boolean | null | undefined {
-        console.log(rootRouters, '[[[');
+        // console.log(rootRouters, '[[[');
         return (
             <div className="App">
-                <Router>
-                    <main>
-                        <Switch>
-                            {
-                                rootRouters.map((route, index) => {
-                                    console.log(route.path,route.component)
-                                    return (
-                                        <Route
-                                            key={index}
-                                            path={route.path}
-                                            exact={route.exact}
-                                            component={route.component}/>
-                                    )
-                                })
-                            }
-                        </Switch>
-                    </main>
-                </Router>
+                <BasicRoute/>
+                {/*<Router>*/}
+                {/*    <main>*/}
+                {/*            <Switch>*/}
+                {/*                {*/}
+                {/*                    rootRouters.map((route, index) => {*/}
+                {/*                        console.log(route.path, route.component)*/}
+                {/*                        return (*/}
+                {/*                            <Route*/}
+                {/*                                key={index}*/}
+                {/*                                path={route.path}*/}
+                {/*                                exact={route.exact}*/}
+                {/*                                component={route.component}/>*/}
+                {/*                        )*/}
+                {/*                    })*/}
+                {/*                }*/}
+                {/*            </Switch>*/}
+                {/*    </main>*/}
+                {/*</Router>*/}
             </div>
         );
     }

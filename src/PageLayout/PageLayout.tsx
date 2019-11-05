@@ -1,7 +1,6 @@
 import React from "react";
 import {Route, Switch, withRouter} from "react-router";
 import {Icon, Layout, Menu} from "antd";
-import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {routers} from "../router/router";
 import menuRouter from "../router/menuRouter";
 import {ClickParam} from "antd/lib/menu";

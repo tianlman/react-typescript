@@ -49,7 +49,7 @@ const menuRouter: IMenuRouter[] = [
         icon: 'pie-chart',
         fullTitle: '测试',
         key: '测试',
-        path: '/Home/Test',
+        path: '/Home/Ceshi',
         children: [
 
         ]

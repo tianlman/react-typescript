@@ -49,10 +49,10 @@ const rootRouters:IRouter[] = [
 //路由配置对象
 const routers: IRouter[]= [
     {
-        path: '/Home/Test',
+        path: '/Home/Ceshi',
         exact: true,
         title:'测试',
-        component: loadable('Test')
+        component: loadable('Ceshi')
     },
     {
         path: '/Home/Detail',

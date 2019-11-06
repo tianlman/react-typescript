@@ -1,7 +1,6 @@
 import React from 'react';
-import {HashRouter, Route, Switch,BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {rootRouters} from "./router";
-
 
 
 const BasicRoute = () => (

@@ -10,24 +10,6 @@ class App extends React.PureComponent<any, any> {
         return (
             <div className="App">
                 <BasicRoute/>
-                {/*<Router>*/}
-                {/*    <main>*/}
-                {/*            <Switch>*/}
-                {/*                {*/}
-                {/*                    rootRouters.map((route, index) => {*/}
-                {/*                        console.log(route.path, route.component)*/}
-                {/*                        return (*/}
-                {/*                            <Route*/}
-                {/*                                key={index}*/}
-                {/*                                path={route.path}*/}
-                {/*                                exact={route.exact}*/}
-                {/*                                component={route.component}/>*/}
-                {/*                        )*/}
-                {/*                    })*/}
-                {/*                }*/}
-                {/*            </Switch>*/}
-                {/*    </main>*/}
-                {/*</Router>*/}
             </div>
         );
     }

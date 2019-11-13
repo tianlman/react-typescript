@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import {StoreState} from "../../redux/type";
-import {decrement, increment} from "../../redux/store/actions";
+import {StoreState} from "../../redux/test/type";
+import {decrement, increment} from "../../redux/test/actions";
 
 // import { decrement, increment } from '../store/actions';
 // import { StoreState } from '../types';
@@ -48,6 +48,5 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     onDecrement: () => dispatch(decrement()),
     onIncrement: () => dispatch(increment())
 })
-
-// 使用 connect 高阶组件对 Counter 进行包裹
+// 使用 connect 高阶组件对 Ceshi 进行包裹
 export default connect(mapStateToProps, mapDispatchToProps)(Ceshi);

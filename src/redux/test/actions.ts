@@ -1,4 +1,4 @@
-import {DECREMENT, DECREMENT_TYPE, INCREMENT, INCREMENT_TYPE} from '../const'
+import {DECREMENT, DECREMENT_TYPE, INCREMENT, INCREMENT_TYPE} from './type'
 
 export interface IINCREMENTAction {
     type: INCREMENT_TYPE;
@@ -13,11 +13,11 @@ export type ModifyAction = IINCREMENTAction | IDECREMENTAction;
 
 
 // 增加 state 次数的方法
-export const increment = (): IINCREMENTAction => ({
+const increment = (): IINCREMENTAction => ({
     type: INCREMENT,
 });
-
 // 减少 state 次数的方法
-export const decrement = (): IDECREMENTAction => ({
+const decrement = (): IDECREMENTAction => ({
     type: DECREMENT
 });
+export {increment, decrement}

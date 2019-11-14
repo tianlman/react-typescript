@@ -8,7 +8,6 @@ const BasicRoute = () => (
         <Switch>
                 {
                     rootRouters.map((route, index) => {
-                        console.log(route.path, route.component)
                         return (
                             <Route
                                 key={index}

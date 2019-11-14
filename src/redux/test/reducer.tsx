@@ -1,14 +1,21 @@
-import { ModifyAction } from './actions';
-import { DECREMENT, INCREMENT } from './type';
+import {DECREMENT, INCREMENT} from './type';
+import {Action} from "../type";
 
+
+const data = {
+    value: 0
+};
 
 // 处理并返回 state
-export default (state = 0, action: ModifyAction): number => {
+export function testFn(state: any = data, action: Action) {
+    console.log(state,'testFn');
     switch (action.type) {
         case INCREMENT:
-            return state + 1;
+            // console.log(Object.assign(state, {value: state.value + 1}),'********************************');
+            return Object.assign(state,{value:state.value + 1});
         case DECREMENT:
-            return state - 1;
+            // return state.value - 1;
+            return Object.assign(state,{value:state.value - 1});
         default:
             return state
     }

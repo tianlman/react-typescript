@@ -1,7 +1,6 @@
 import React from 'react'
 import Loadable from 'react-loadable'
 import {Redirect} from "react-router-dom";
-import PageLayout from "../PageLayout/PageLayout";
 
 interface IRouter {
     path:string
@@ -33,10 +32,7 @@ const rootRouters:IRouter[] = [
         // 首页
         path: '/Home',
         component: loadable2('PageLayout')
-        // component: Loadable({
-        //     loader: () => import('@/PageLayout/PageLayout'),
-        //     loading: () => null
-        // })
+
     },
     {
         // Page404 匹配

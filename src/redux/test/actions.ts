@@ -6,7 +6,7 @@ import {DECREMENT, INCREMENT} from './type'
 
 // 增加 state 次数的方法
 
-export function increment=()=> {
+export function increment(){
     console.log('++++++++++++++++');
     return {
         type: INCREMENT,

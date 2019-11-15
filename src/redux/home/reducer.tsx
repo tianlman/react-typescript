@@ -4,14 +4,14 @@ import {Action, State} from "../type";
 
 const name = {
     list: [],
-    mag: 'asd'
+    msg: 'asd'
 }
 // 处理并返回 state
 export function HomeFn (state:State = name, action: Action){
-    console.log(state, action);
+    console.log(state, action,'[[[[[[[[[');
     switch (action.type) {
         case HOMEMSG:
-            return Object.assign(state, action.payload);
+            return {...state, ...action.payload};
         default:
             return state
     }

@@ -12,10 +12,12 @@ export function testFn(state: any = data, action: Action) {
     switch (action.type) {
         case INCREMENT:
             // console.log(Object.assign(state, {value: state.value + 1}),'********************************');
-            return Object.assign(state,{value:state.value + 1});
+            // return Object.assign(state,{value:state.value + 1});
+            return {...state,...{value:state.value+1}}
         case DECREMENT:
             // return state.value - 1;
-            return Object.assign(state,{value:state.value - 1});
+            // return Object.assign(state,{value:state.value - 1});
+            return {...state,...{value:state.value-1}}
         default:
             return state
     }

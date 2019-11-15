@@ -4,6 +4,7 @@ import { Dispatch } from 'redux';
 import {StoreState} from "../../redux/test/type";
 import {decrement, increment} from "../../redux/test/actions";
 import {ChangeEvent} from "react";
+import Msg from "./components/Msg";
 
 // import { decrement, increment } from '../store/actions';
 // import { StoreState } from '../types';
@@ -32,14 +33,15 @@ class Ceshi extends React.PureComponent<IProps,any> {
         const { data, onIncrement, onDecrement } = this.props;
         console.log(data,'[][]');
         return (
-            <p>
-                Clicked: { data.value } times
+            <div>
+                {/*Clicked: { data.value } times*/}
+                <Msg value={data.value}/>
                 <br />
                 <br />
                 <input type="text" value={data.value} onChange={this.handelChange}/>
                 <button onClick={ onIncrement } style={{ marginRight: 20 }}> +  </button>
                 <button onClick={ onDecrement }> - </button>
-            </p>
+            </div>
         )
     }
 }

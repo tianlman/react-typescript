@@ -4,6 +4,7 @@ import {HOMEMSG, HomeState} from './type'
 
 // 增加 state 次数的方法
 export function changeMsg(action: HomeState) {
+    console.log(action,'111');
     return {
         type: HOMEMSG,
         payload: action

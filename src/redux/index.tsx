@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
 // const middleWareEnhancer = applyMiddleware(...middlewares);
 
 // 1、创建 store
-console.log(rootReducer,'ceshiyixia1');
+// console.log(rootReducer,'ceshiyixia1');
 const store = createStore(rootReducer, composeWithDevTools());
 export default store
 

@@ -27,7 +27,7 @@ class Home extends React.PureComponent<IHomeProps, any> {
 };
 
 const mapStateToProps = (state: any) => {
-    console.log(state,'111');
+    // console.log(state,'111');
     return {
         data: state.HomeFn
     }

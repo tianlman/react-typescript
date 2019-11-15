@@ -8,7 +8,7 @@ const name = {
 }
 // 处理并返回 state
 export function HomeFn (state:State = name, action: Action){
-    console.log(state, action,'[[[[[[[[[');
+    // console.log(state, action,'[[[[[[[[[');
     switch (action.type) {
         case HOMEMSG:
             return {...state, ...action.payload};

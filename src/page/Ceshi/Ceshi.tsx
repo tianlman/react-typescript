@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import {StoreState} from "../../redux/test/type";
-import {decrement, increment} from "../../redux/test/actions";
+import {CHANGE_VALUE, StoreState} from "../../redux/test/type";
+import {decrement, handleChange, increment} from "../../redux/test/actions";
 import {ChangeEvent} from "react";
 import Msg from "./components/Msg";
+import {Action} from "../../redux/type";
 
 // import { decrement, increment } from '../store/actions';
 // import { StoreState } from '../types';
@@ -17,6 +18,7 @@ export interface IProps {
     },
     onIncrement: () => void,
     onDecrement: () => void
+    handleChange: (a:any) => void
 }
 
 // 使用接口代替 PropTypes 进行类型校验
@@ -25,8 +27,8 @@ class Ceshi extends React.PureComponent<IProps,any> {
     //     console.log(this.props,'1111111') // 这里的prop是拿不到dispatch函数，因为组合高阶函数的时候做了处理，没有传入dispatch，只有{value: 0, onDecrement: ƒ, onIncrement: ƒ}
     // }
     handelChange=(event:ChangeEvent<HTMLInputElement>)=>{
-        console.log(event);
-
+        // console.log(event);
+        this.props.handleChange({type:CHANGE_VALUE,value:event.target.value})
     }
     public render() {
         console.log(this.props,'1111111')
@@ -39,8 +41,8 @@ class Ceshi extends React.PureComponent<IProps,any> {
                 <br />
                 <br />
                 <input type="text" value={data.value} onChange={this.handelChange}/>
-                <button onClick={ onIncrement } style={{ marginRight: 20 }}> +  </button>
-                <button onClick={ onDecrement }> - </button>
+                <button onClick={ onIncrement } style={{ marginRight: 20 }}> 加 </button>
+                <button onClick={ onDecrement }> 减</button>
             </div>
         )
     }
@@ -61,7 +63,8 @@ const  mapStateToProps = (state:any) => {
 // 将 对应action 插入到组件的 props 中
 const mapDispatchToProps = (dispatch: Dispatch) => ({
     onDecrement: () => dispatch(decrement()),
-    onIncrement: () => dispatch(increment())
+    onIncrement: () => dispatch(increment()),
+    handleChange: (value:any) => dispatch(handleChange(value))
 });
 // 使用 connect 高阶组件对 Ceshi 进行包裹
 export default connect(mapStateToProps, mapDispatchToProps)(Ceshi);

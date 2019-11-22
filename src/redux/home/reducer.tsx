@@ -5,7 +5,7 @@ import {Action, State} from "../type";
 const name = {
     list: [],
     msg: 'asd'
-}
+};
 // 处理并返回 state
 export function HomeFn (state:State = name, action: Action){
     // console.log(state, action,'[[[[[[[[[');

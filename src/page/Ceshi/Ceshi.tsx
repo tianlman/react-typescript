@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import {CHANGE_VALUE, StoreState} from "../../redux/test/type";
+import {ChangeEvent} from 'react';
+import {connect} from 'react-redux';
+import {Dispatch} from 'redux';
+import {CHANGE_VALUE} from "../../redux/test/type";
 import {decrement, handleChange, increment} from "../../redux/test/actions";
-import {ChangeEvent} from "react";
 import Msg from "./components/Msg";
-import {Action} from "../../redux/type";
 
 // import { decrement, increment } from '../store/actions';
 // import { StoreState } from '../types';

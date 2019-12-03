@@ -6,7 +6,7 @@ import menuRouter from "../router/menuRouter";
 import {ClickParam} from "antd/lib/menu";
 
 const SubMenu = Menu.SubMenu
-const { Sider} = Layout;
+const {Sider} = Layout;
 
 class PageLayout extends React.PureComponent<any, any> {
     constructor(props: any) {
@@ -14,13 +14,14 @@ class PageLayout extends React.PureComponent<any, any> {
         this.state = {}
     }
 
-    onClick=(param: ClickParam,path:string|undefined)=>{
+    onClick = (param: ClickParam, path: string | undefined) => {
         // console.log(param,path,'[][]');
         // history.push(`${match.path}/home`)}
         this.props.history.push({
             pathname: path
         });
     }
+
     render() {
         // console.log(this.props, 'routersrouters');
         return (
@@ -29,7 +30,7 @@ class PageLayout extends React.PureComponent<any, any> {
                     style={{overflow: 'auto', height: '100vh', position: 'fixed', left: 0,}}
                 >
                     <div className="logo"/>
-                    <Menu theme="dark" mode="inline" >
+                    <Menu theme="dark" mode="inline">
                         {
                             menuRouter.map((item) => {
                                 return (
@@ -43,14 +44,16 @@ class PageLayout extends React.PureComponent<any, any> {
                                             {
                                                 item.children.map((it) => {
                                                     return (
-                                                        <Menu.Item key={it.key} onClick={(param: ClickParam)=>this.onClick(param,it.path)}>
+                                                        <Menu.Item key={it.key}
+                                                                   onClick={(param: ClickParam) => this.onClick(param, it.path)}>
                                                             {it.title}</Menu.Item>
                                                     )
                                                 })
                                             }
                                         </SubMenu>
                                         : (
-                                            <Menu.Item key={item.key} style={{textAlign: 'left'}} onClick={(param: ClickParam)=>this.onClick(param,item.path)}>
+                                            <Menu.Item key={item.key} style={{textAlign: 'left'}}
+                                                       onClick={(param: ClickParam) => this.onClick(param, item.path)}>
                                                 <Icon type={item.icon}/>
                                                 <span>{item.title}</span>
                                             </Menu.Item>
@@ -62,25 +65,25 @@ class PageLayout extends React.PureComponent<any, any> {
                 </Sider>
                 <Layout style={{marginLeft: 200}}>
 
-                        <div style={{padding: 24, background: '#fff', textAlign: 'center'}}>
+                    <div style={{padding: 24, background: '#fff', textAlign: 'center'}}>
 
-                                    <Switch location={this.props.location}>
-                                        {
-                                            routers.map((route, index) => {
-                                                // console.log(route,']]]]]]]]]]]]]]]]]]]]]');
-                                                return (
-                                                    <Route
-                                                        key={index}
-                                                        exact
-                                                        path={route.path}
-                                                        component={route.component}
-                                                    />
-                                                )
-                                            })
-                                        }
-                                    </Switch>
+                        <Switch location={this.props.location}>
+                            {
+                                routers.map((route, index) => {
+                                    // console.log(route,']]]]]]]]]]]]]]]]]]]]]');
+                                    return (
+                                        <Route
+                                            key={index}
+                                            exact
+                                            path={route.path}
+                                            component={route.component}
+                                        />
+                                    )
+                                })
+                            }
+                        </Switch>
 
-                        </div>
+                    </div>
                 </Layout>
             </Layout>
         );

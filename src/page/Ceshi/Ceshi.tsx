@@ -5,6 +5,8 @@ import {Dispatch} from 'redux';
 import {CHANGE_VALUE} from "../../redux/test/type";
 import {decrement, handleChange, increment} from "../../redux/test/actions";
 import Msg from "./components/Msg";
+import $http from "../../https/https";
+import {testApi} from "./ceshi.serve";
 
 // import { decrement, increment } from '../store/actions';
 // import { StoreState } from '../types';
@@ -22,13 +24,18 @@ export interface IProps {
 
 // 使用接口代替 PropTypes 进行类型校验
 class Ceshi extends React.PureComponent<IProps,any> {
-    // componentDidMount () {
-    //     console.log(this.props,'1111111') // 这里的prop是拿不到dispatch函数，因为组合高阶函数的时候做了处理，没有传入dispatch，只有{value: 0, onDecrement: ƒ, onIncrement: ƒ}
-    // }
-    handelChange=(event:ChangeEvent<HTMLInputElement>)=>{
-        // console.log(event);
-        this.props.handleChange({type:CHANGE_VALUE,value:event.target.value})
+    componentDidMount () {
+        console.log(this.props,'1111111') // 这里的prop是拿不到dispatch函数，因为组合高阶函数的时候做了处理，没有传入dispatch，只有{value: 0, onDecrement: ƒ, onIncrement: ƒ}
+        // let data = testApi()
+        let params = testApi({})
+        let data  = $http(params)
+        console.log(data,'3336669996633');
+
     }
+
+    handelChange=(event:ChangeEvent<HTMLInputElement>)=>{
+        this.props.handleChange({type:CHANGE_VALUE,value:event.target.value})
+    };
     public render() {
         console.log(this.props,'1111111')
         const { data, onIncrement, onDecrement } = this.props;

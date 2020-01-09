@@ -8,3 +8,10 @@ export const testApi = function (param: any): IParam {
         param: param,
     }
 }
+export const ApiDataOne1 = function (param: any): IParam {
+    return {
+        url: '/mode2/DataOne1',
+        method: "GET",
+        param: param,
+    }
+}

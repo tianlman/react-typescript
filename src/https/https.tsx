@@ -2,7 +2,7 @@ import axios from 'axios' // axios引用
 import Qs from 'qs'
 import {baseUrlBusiness} from "../config/ipConfig";
 
-export const baseUrl = process.env.API_URL || baseUrlBusiness;
+export const baseUrl = process.env.API_URL || baseUrlBusiness;//区分 开发 测试 发布 地址
 const http = axios.create({
     baseURL: baseUrl,
     headers: {'Content-Type': 'application/x-www-form-urlencoded'},
